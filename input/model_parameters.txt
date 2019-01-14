@@ -1,0 +1,12 @@
+%%%%% Model Parameters
+% Values: 1 to include; 0 to exclude
+% Line 1: Aero-drag; Aero-torque; Grav-model; Grav-torque; Eddy-torque; Sun acc.; Moon acc.; SRP acc.; Albedo acc.; IR acc.; SRP torque; Albedo torque; IR torque; Kane damper
+% Line 2: l_max for grav_a; l_max for grav_g; drag coefficient; Ap, F10.7 (for use with NRL; if 0 then use actual data)
+% Line 3: Atmospheric density model: 1 for NRLMSISE-00; 2 for JB2008; Magnetic Field model: 1 for IGRF-12; 2 for WMM; Winds: 0 for co-rotating winds; 1 for HWM14; Albedo & IR: 1 for Stephens; 2 for CERES; 3 for ECMWF
+% Line 4: damper moment of inertia (kg m^2); damping coefficient (kg m^2 s^-1)
+% Line 5: Output work file if 1, no if 0; Output perturbations if 1, no if 0;
+1	1	1	1	1	1	1	1	1	1	1	1	1	1
+2	2	2.2	0	0
+1	1	1	1
+10	0.1
+1	1

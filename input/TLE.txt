@@ -1,0 +1,4 @@
+%%%%% Input Two-Line Element for Propagation Initialization
+% Initializes start time and orbital parameters through SGP4
+1 27386U 02009A   13127.45641789  .00000089  00000-0  44087-4 0  3555
+2 27386  98.4303 196.5510 0001204  87.6383 272.4946 14.37606880585289

@@ -1,0 +1,15 @@
+%%%%% Spacecraft Parameters
+% Line 1 is m (kg), number of surfaces
+% Line 2 is initial angular velocity of body frame w.r.t. inertial frame in body frame (° s^-1)
+% Line 3 is initial attitude of body frame (Euler angles with 3-2-1 rotation) (°)  w.r.t. (1) inertial frame or (2) orbital frame
+% Lines 4-6 are the inertia matrix (kg m^2)
+% Lines 7-9 are the magnetic tensor (S m^4)
+7827.867	16
+0	0	2.9
+180	0	81.5	2
+17023.3	397.1	-2171.4
+397.1	124825.7	344.2
+-2171.4	344.2	129112.2
+0931500	0	0
+0	1059000	0
+0	0	1059000
