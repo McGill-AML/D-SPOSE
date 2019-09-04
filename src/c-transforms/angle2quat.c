@@ -33,12 +33,12 @@ void angle2quat(double y, double p, double r, double q[4])
     double angles[3] = {y, p, r};
     
     double cang[3];
-    for (int i = 0; i<4; i++)
+    for (int i = 0; i<3; i++)
     {
         cang[i] = cos(angles[i]/2.0);
     }
     double sang[3];
-    for (int i = 0; i<4; i++)
+    for (int i = 0; i<3; i++)
     {
         sang[i] = sin(angles[i]/2.0);
     }
