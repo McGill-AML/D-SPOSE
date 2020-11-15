@@ -48,6 +48,12 @@
 #include "crossprod.h"
 #include "nrlmsise-00.h"
 
+extern void solfsmy_(double *T1950, double *F10, double *F10B, double *S10, double *S10B, double *XMXX, double *XMXXB, double *XYXX, double *XYXXB);
+extern void dtcval_(double *D1950, int *IDTCVAL);
+extern void theta_(double *xD1950, double *GWRAS);
+extern void sunpos_(double *AMJD, double *SOLRAS, double *SOLDEC);
+extern void jb2008_(double *AMJD, double SUN[2], double SAT[3], double *F10, double *F10B, double *S10, double *S10B, double *XM10, double *XM10B, double *Y10, double *Y10B, double *DSTDTC, double TEMP[2], double *RHO);
+
 double get_density(int atmos_model, double LLA[4], double t2000utc, int length_of_file[5], double ap_index[length_of_file[0]], double solar_input[length_of_file[1]][3], double Apc, double F107c){
     
     int day, year, time[3];
@@ -266,7 +272,7 @@ double get_density(int atmos_model, double LLA[4], double t2000utc, int length_o
         SUN[1] = SOLDEC;
         
         // Obtain density
-        jb2008_(&AMJD,&SUN,&SAT,&F10,&F10B,&S10,&S10B,&XM10,&XM10B,&Y10,&Y10B,&DSTDTC,&TEMP,&RHO);
+        jb2008_(&AMJD,SUN,SAT,&F10,&F10B,&S10,&S10B,&XM10,&XM10B,&Y10,&Y10B,&DSTDTC,TEMP,&RHO);
         double densityJB = RHO; //
         
         density_mod = densityJB;

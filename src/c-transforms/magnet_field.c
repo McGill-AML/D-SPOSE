@@ -121,8 +121,19 @@ void magnet_field(double t2000utc, double p[3], double p_LLA[3], double v_LLA[3]
     else if(colat<180.00000001*M_PI/180.0 && colat>179.99999999*M_PI/180.0)
         colat=179.99999999*M_PI/180.0;
     
-    // Calculate Schmidt, associated Legendre, quasi-normalized blablabla
+    // Calculate Schmidt normalized associated Legendre functions
     double P[14][14];
+    double dP[14][14];
+    double ddP[14][14];
+    double S[14][14];
+    for (int i=1; i<14; i++){
+        for (int j=1; j<14; j++){
+            P[i][j]=0;
+            dP[i][j]=0;
+            ddP[i][j]=0;
+            S[i][j]=0;
+        }
+    }
     P[0][0] = 1;
     P[1][0] = cos(colat);
     for (int n=1; n<14; n++)
@@ -131,7 +142,6 @@ void magnet_field(double t2000utc, double p[3], double p_LLA[3], double v_LLA[3]
         for(int m=0; m<n; m++)
             P[n][m] = cos(colat)*P[n-1][m] - ((n-1)*(n-1)-m*m)*P[n-2][m]/((2*n-1)*(2*n-3));
     }
-    double dP[14][14];
     dP[0][0] = 0;
     dP[1][0] = -sin(colat);
     for (int n=1; n<14; n++)
@@ -140,7 +150,6 @@ void magnet_field(double t2000utc, double p[3], double p_LLA[3], double v_LLA[3]
         for (int m=0; m<n; m++)
             dP[n][m] = cos(colat)*dP[n-1][m] - sin(colat)*P[n-1][m] - ((n-1)*(n-1)-m*m)*dP[n-2][m]/((2*n-1)*(2*n-3));
     }
-    double ddP[14][14];
     ddP[0][0] = 0;
     ddP[1][0] = -cos(colat);
     for (int n=1; n<14; n++)
@@ -149,7 +158,7 @@ void magnet_field(double t2000utc, double p[3], double p_LLA[3], double v_LLA[3]
         for (int m=0; m<n; m++)
             ddP[n][m] = cos(colat)*ddP[n-1][m] - 2*sin(colat)*dP[n-1][m] - cos(colat)*P[n-1][m] - ((n-1)*(n-1)-m*m)*ddP[n-2][m]/((2*n-1)*(2*n-3));
     }
-    double S[14][14], delta;
+    double delta;
     S[0][0] = 1;
     for (int n=1; n<14; n++)
         S[n][0] = S[n-1][0]*(2*n-1)/n;

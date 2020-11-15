@@ -56,7 +56,7 @@ int main()
 {
     
     // VERSION NUMBER
-    char version[100] = "1.0.0";
+    char version[100] = "1.0.1";
     printf("\nVersion: %s\n\n",version);
     
     // Output File Location

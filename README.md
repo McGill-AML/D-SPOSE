@@ -8,8 +8,8 @@ luc.sagnieres@mail.mcgill.ca
 
 ## General info
 ```
-Version: 1.0.0
-Release Date: January 15, 2019
+Version: 1.0.1
+Release Date: November 16, 2020
 ```
 
 READ [DOCUMENTATION](docs) BEFORE USE.
@@ -74,7 +74,6 @@ The second runs the coupled orbit-attitude propagator using the parameters in th
 
 3. Environmental Models:
    * Bowman, B. R. (2008), A New Empirical Thermospheric Density Model JB2008 Using New Solar and Geomagnetic Indices, In Proceedings  of  the  AIAA/AAS  Astrodynamics  Specialist  Conference  and  Exhibit,  AIAA  2008-6438,  Honolulu,  Hawaii, doi:10.2514/6.2008-6438.
-   * Bruinsma, S. (2015), The DTM-2013 thermosphere model, J. Space Weather Space Clim., 5, A1, doi:10.1051/swsc/2015001.
    * Drob, D. P. et al. (2015), An update to the Horizontal Wind Model (HWM): The quiet time thermosphere, Earth and Space Science, 2:301–319, 2015. doi:10.1002/2014EA000089.
    * Pavlis, N. K., S. A. Holmes, S. C. Kenyon, and J. K. Factor (2012), The development and evaluation of the Earth Gravitational Model 2008 (EGM2008), Journal of Geophysical Research, 117:B04406, 2012. doi:10.1029/2011JB008916.
    * Picone, J. M., A. E. Hedin, D. P. Drob, and A. C. Aikin (2002), NRLMSISE-00 empirical model of the atmosphere: Statistical comparisons and scientific issues, Journal of Geophysical Research, 107(A12):1468, doi:10.1029/2002JA009430.
@@ -88,7 +87,6 @@ The second runs the coupled orbit-attitude propagator using the parameters in th
    * [Earth Gravitational Model 2008](http://earth-info.nga.mil/GandG/wgs84/gravitymod/egm2008/egm08_wgs84.html)
    * [World Magnetic Model](https://www.ngdc.noaa.gov/geomag/WMM/wmm_ddownload.shtml)
    * [International Geomagnetic Reference Field 12th Edition](https://www.ngdc.noaa.gov/IAGA/vmod/igrf.html)
-   * [Drag Temperature Model 2013](http://www.atmop.eu/index.php/models)
    * [Jacchia-Bowman 2008](http://sol.spacenvironment.net/jb2008/code.html)
    * [Horizontal Wind Model 2014](https://github.com/pa345/lib/tree/master/hwm)
    * [NRLMSISE-2000](https://github.com/magnific0/nrlmsise-00)

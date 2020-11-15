@@ -42,6 +42,8 @@
 #include "crossprod.h"
 #include "matxvec.h"
 
+extern void hwm14_(int *iyd, float *sec, float *alt, float *lat, float *lon, float *stl, float f107a[2], float f107[2], float ap[2], float w[2]);
+
 void wind(double p_ecef[3], double LLA[4], double t2000utc, int length_of_file[5], double ap_index[length_of_file[0]], double C_ecef2teme[3][3], int wind_model, double winds_i[3]){
 
     double winds_ecef[3] = {0,0,0};
@@ -87,7 +89,7 @@ void wind(double p_ecef[3], double LLA[4], double t2000utc, int length_of_file[5
             ap[1] = ap_index[(i+2)*8+8];
         
         // Horizontal Wind Model 2014
-        hwm14_(&iyd,&sec,&alt,&lat,&lon,&stl,&f107a,&f107,&ap,&w);
+        hwm14_(&iyd,&sec,&alt,&lat,&lon,&stl,f107a,f107,ap,w);
         double winds_ned[3] = {0,0,0};
         winds_ned[0] = w[0];
         winds_ned[1] = w[1];

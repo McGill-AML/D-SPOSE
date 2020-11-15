@@ -49,7 +49,7 @@ src/%.o: src/c-transforms/%.c
 	$(gccCompiler) -std=gnu99 -c $< -o $@
 
 dspose_exec: $(addprefix ,$(cpp_objects)) $(addprefix src/,$(fortran_objects)) $(addprefix src/,$(c_objects))
-	$(gccCompiler) $(addprefix src/,$(c_objects)) $(addprefix src/,$(fortran_objects)) -lgfortran -o dspose_exec
+	$(gccCompiler) $(addprefix src/,$(c_objects)) $(addprefix src/,$(fortran_objects)) -lm -lgfortran -o dspose_exec
 
 test: dspose_exec tle2rv_exec
 	./tle2rv_exec
