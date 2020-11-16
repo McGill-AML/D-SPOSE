@@ -30,7 +30,7 @@ void gaus_coef(double mag_coef[195][27], double G[14][14][25], double H[14][14][
     
     for (int i=0; i<14; i++){
         for (int j=0; j<14; j++){
-            for (int k=0; k<26; k++){
+            for (int k=0; k<25; k++){
                 G[i][j][k] = 0;
                 H[i][j][k] = 0;
             }
